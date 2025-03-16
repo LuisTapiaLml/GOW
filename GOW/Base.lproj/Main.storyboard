@@ -71,6 +71,7 @@
                         <segue destination="bVt-am-Dih" kind="show" identifier="gamesSegue" id="CaL-F7-YX7"/>
                         <segue destination="9Dv-dN-Y5T" kind="show" identifier="weaponsSegue" id="Ob6-RR-6NO"/>
                         <segue destination="n1M-xW-ydL" kind="show" identifier="MerchantSegue" id="MYN-Nv-R3l"/>
+                        <segue destination="sSc-ME-GBU" kind="show" identifier="charactersSegue" id="3JK-Oh-vUe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m7-3P-mFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,7 +409,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ns7-fd-Shm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3922.9007633587785" y="934.50704225352115"/>
+            <point key="canvasLocation" x="4849.6183206106871" y="934.50704225352115"/>
+        </scene>
+        <!--CGO-->
+        <scene sceneID="JIJ-jW-haL">
+            <objects>
+                <viewController id="8U8-gM-0Y7" customClass="CharactersViewController" customModule="GOW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UA6-Wb-6UR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QBk-h4-zD0"/>
+                        <color key="backgroundColor" name="GOWBlack1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="CGO" image="gearshape.fill" catalog="system" id="XgW-pL-Mun">
+                        <color key="badgeColor" name="GOWBlack1"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqb-cA-3L6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="1583"/>
         </scene>
         <!--MerchantView-->
         <scene sceneID="Yg3-pz-2Uk">
@@ -417,20 +436,8 @@
                     <view key="view" contentMode="scaleToFill" id="N0r-gv-JT0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="merchant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-5O-KaE">
-                                <rect key="frame" x="160.33333333333334" y="415.66666666666669" width="72.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1kW-Zk-BCB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="GIb-5O-KaE" firstAttribute="centerX" secondItem="N0r-gv-JT0" secondAttribute="centerX" id="ED0-Hz-HBq"/>
-                            <constraint firstItem="GIb-5O-KaE" firstAttribute="centerY" secondItem="N0r-gv-JT0" secondAttribute="centerY" id="ioQ-f7-aBr"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Laz-Iw-glD"/>
                 </viewController>
@@ -499,12 +506,56 @@
             </objects>
             <point key="canvasLocation" x="1831" y="-335"/>
         </scene>
+        <!--tab bar characters-->
+        <scene sceneID="jX8-mf-YBY">
+            <objects>
+                <tabBarController title="tab bar characters" automaticallyAdjustsScrollViewInsets="NO" id="sSc-ME-GBU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gr6-qq-A7S"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z4V-If-ATw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="GOWBlack1"/>
+                        <color key="tintColor" name="GOWBlack1"/>
+                        <color key="barTintColor" name="GOWBlack1"/>
+                        <color key="selectedImageTintColor" name="GOWRed"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8U8-gM-0Y7" kind="relationship" relationship="viewControllers" id="6a0-vo-URf"/>
+                        <segue destination="0hS-VD-KcW" kind="relationship" relationship="viewControllers" id="e2i-po-1ZG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSP-ts-JRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="1376"/>
+        </scene>
+        <!--Locus characters-->
+        <scene sceneID="Kme-LR-FRY">
+            <objects>
+                <viewController title="Locus characters" id="0hS-VD-KcW" customClass="CharactersViewController" customModule="GOW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="649-v5-NL3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nuR-cA-bLX"/>
+                        <color key="backgroundColor" name="GOWBlack1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="CGO" image="circle.grid.cross.fill" catalog="system" id="yyt-W6-jDh">
+                        <color key="badgeColor" name="GOWBlack1"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="RuY-pz-S45"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGx-eR-4yg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="2322"/>
+        </scene>
     </scenes>
     <resources>
         <image name="circle.grid.cross.fill" catalog="system" width="128" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="headerGOW" width="393" height="346"/>
         <image name="headerLocus" width="1512" height="712"/>
+        <namedColor name="GOWBlack1">
+            <color red="0.059000000357627869" green="0.030999999493360519" blue="0.039000000804662704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="GOWRed">
             <color red="0.63899999856948853" green="0.050999999046325684" blue="0.054999999701976776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -22,10 +22,10 @@ class HomeViewController: UITableViewController {
                 title:"Weapons",
                 image:"shield.fill",
                 segue:"weaponsSegue")
-            /*, MenuOption(
+            , MenuOption(
                 title:"Characters",
                 image:"person.crop.rectangle.stack.fill",
-                segue:"charactersSegue")*/
+                segue:"charactersSegue")
             ,MenuOption(
                 title:"Merchandise",
                 image:"shippingbox.fill",
@@ -63,19 +63,20 @@ class HomeViewController: UITableViewController {
                 cell.menuLabel.text = menuOptions[indexPath.row].title
                 cell.menuImage.image = UIImage(systemName:menuOptions[indexPath.row].image)
         
-        guard let customFont = UIFont(name: "CGFLocustResistance", size: UIFont.labelFontSize) else {
+        guard let customFont = UIFont(name: Constants.fontName, size: UIFont.labelFontSize) else {
             fatalError("""
                 Failed to load the "CustomFont-Light" font.
                 Make sure the font file is included in the project and the font name is spelled correctly.
                 """
             )
         }
+        cell.menuLabel.font = UIFontMetrics.default.scaledFont(for: customFont)
         
         cell.backgroundColor = .blackBackground
         cell.menuLabel.textColor = .text
         
         
-        cell.menuLabel.font = UIFontMetrics.default.scaledFont(for: customFont)
+        
         cell.menuLabel.adjustsFontForContentSizeCategory = true
         cell.menuLabel.textColor = .gowBlack2
           

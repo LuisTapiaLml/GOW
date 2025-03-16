@@ -120,11 +120,21 @@ extension WeaponsViewController: UITableViewDelegate , UITableViewDataSource{
         
         let weapon = arrayWeapons[indexPath.row]
         
+        guard let customFont = UIFont(name: Constants.fontName, size: UIFont.labelFontSize) else {
+            fatalError("""
+                Failed to load the "CustomFont-Light" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        
+        cell.wName.font = UIFontMetrics.default.scaledFont(for: customFont)
         
         
         cell.wName.text = weapon.name
         
-        cell.wName.textColor = .gowText
+        cell.wName.textColor = .gowRed
+        
         cell.wDescription.textColor = .gowText
         cell.wDescription.text = weapon.description
         

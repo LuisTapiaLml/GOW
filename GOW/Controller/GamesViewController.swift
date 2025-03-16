@@ -41,6 +41,8 @@ class GamesViewController: UIViewController {
             gameImage.image = UIImage(named: String(gamePosters[imagePageControl.currentPage]))
             
         }
+        
+        
     }
     
     
@@ -58,7 +60,37 @@ class GamesViewController: UIViewController {
         imagePageControl.numberOfPages = gamePosters.count
         gameImage.image = UIImage(named: gamePosters.first?.description ?? "0")
         
+        let originalImage = UIImage(named: "gow_logo")!
+        
+        imagePageControl.transform = CGAffineTransform(scaleX: 2, y: 2);
+        self.imagePageControl.currentPageIndicatorTintColor = UIColor.gowRed
         
         
+        for ( index , _ ) in gamePosters.enumerated() {
+            if #available(iOS 16.0, *) {
+                //imagePageControl.transform = CGAffineTransform(scaleX: 2.5, y: 2.5);
+                
+                imagePageControl.setCurrentPageIndicatorImage(originalImage,forPage: index)
+                
+                
+                
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+        
+       
+        
+    }
+    
+    
+}
+
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
     }
 }
