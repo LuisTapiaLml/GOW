@@ -9,6 +9,11 @@ import UIKit
 
 class WeaponsCell: UITableViewCell {
 
+    @IBOutlet weak var wDescription: UILabel!
+    @IBOutlet weak var wPoster: UIImageView!
+    @IBOutlet weak var wName: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +23,8 @@ class WeaponsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
+        self.backgroundColor = .blackBackground
     }
 
 }
